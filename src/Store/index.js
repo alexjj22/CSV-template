@@ -1,14 +1,20 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux'
+import {
+    createStore,
+    applyMiddleware,
+    combineReducers }       from 'redux';
+import createSagaMiddleware from 'redux-saga'
+import logger               from '../Middleware/logger';
+import csvTemplate          from './reducers';
+import { watchCsvValue }    from '../sagas/sagas'
 
-import logger from 'redux-logger'
+const sagaMiddleware = createSagaMiddleware();
 
-import csvTemplate from '../Containers/CsvTemplate/reducers'
+// const reducer = combineReducers({
+//     csvTemplate
+// });
 
+const store = createStore(csvTemplate, applyMiddleware(logger, sagaMiddleware));
 
-const reducer = combineReducers({
-    csvTemplate
-});
-
-const store = createStore(reducer, applyMiddleware(logger));
+sagaMiddleware.run(watchCsvValue);
 
 export default store;

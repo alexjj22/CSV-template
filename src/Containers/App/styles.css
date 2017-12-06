@@ -1,0 +1,48 @@
+.app * {
+    box-sizing: border-box;
+}
+
+.guide ul {
+    padding-left: 0;
+}
+
+.guide ul li{
+    list-style-type: none;
+    margin: 0;
+}
+
+.csv-template-container {
+    margin-bottom: 16px;
+}
+
+.csv-template-container textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.scv-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid cornflowerblue;
+}
+
+.scv-table th, td {
+    text-align: left;
+    padding: 5px;
+    border: 1px solid cornflowerblue;
+}
+
+.scv-table th {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.scv-table th.active {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.scv-table th.forbidden {
+    cursor: default;
+}
