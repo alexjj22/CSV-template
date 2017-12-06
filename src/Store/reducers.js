@@ -15,7 +15,7 @@ const initialState = {
     allowSort: false
 };
 
-export default function csvTemplate( state = initialState, { type, payload } = {} ) {
+export default function reducer( state = initialState, { type, payload } = {} ) {
     switch (type) {
         case CREATE_TABLE_FROM_CSV:
         case SET_SORT_ITEM:

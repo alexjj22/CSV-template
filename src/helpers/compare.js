@@ -1,4 +1,4 @@
-export function checkDate(str) {
+function checkDate(str) {
     const dateRegex = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
     return dateRegex.test(str);
 }
